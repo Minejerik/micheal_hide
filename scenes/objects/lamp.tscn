@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw5jb5niap3gy"]
+
+[ext_resource type="Texture2D" uid="uid://d4fl2ebigyk6s" path="res://assets/light.png" id="1_7qmby"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq5cr"]
+size = Vector2(16, 16)
+
+[sub_resource type="Gradient" id="Gradient_7qmby"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_06rti"]
+gradient = SubResource("Gradient_7qmby")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="lamp" type="RigidBody2D"]
+texture_filter = 1
+mass = 0.5
+lock_rotation = true
+linear_damp = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_7qmby")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_06rti")

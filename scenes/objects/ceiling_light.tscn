@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://do3p6meuqq6c5"]
+
+[sub_resource type="Gradient" id="Gradient_eaa0b"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hdgcg"]
+gradient = SubResource("Gradient_eaa0b")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="ceiling_light" type="Node2D"]
+z_index = 10
+y_sort_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.7607843, 0, 1)
+energy = 0.7
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_hdgcg")
+texture_scale = 0.5
+height = 50.0
