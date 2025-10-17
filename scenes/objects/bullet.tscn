@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw3obmgd0ame8"]
+[gd_scene load_steps=12 format=3 uid="uid://dw3obmgd0ame8"]
 
 [ext_resource type="Texture2D" uid="uid://5ktcatd6k40j" path="res://assets/bullet.png" id="1_ds4j2"]
 [ext_resource type="Script" uid="uid://de44kdh126506" path="res://scripts/bullet.gd" id="1_r481e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r481e"]
+absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r481e"]
 size = Vector2(3, 4)
@@ -50,10 +53,13 @@ scale_min = 0.5
 color = Color(0.79607844, 0.44313726, 0, 1)
 color_ramp = SubResource("GradientTexture1D_a6ixa")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_r481e"]
+radius = 3.0
+
 [node name="bullet" type="RigidBody2D"]
 texture_filter = 1
 mass = 0.01
-contact_monitor = true
+physics_material_override = SubResource("PhysicsMaterial_r481e")
 max_contacts_reported = 5
 script = ExtResource("1_r481e")
 
@@ -81,6 +87,12 @@ one_shot = true
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_r481e")
 
+[node name="CollisionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+shape = SubResource("CircleShape2D_r481e")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="finished" from="Collision_particles" to="." method="_on_collision_particles_finished"]
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_collision_area_body_entered"]
