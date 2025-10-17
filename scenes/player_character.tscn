@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8xdjbi2afqa4"]
 
-[ext_resource type="Texture2D" uid="uid://cnnlswbvjyipf" path="res://icon.svg" id="1_02ohv"]
 [ext_resource type="Script" uid="uid://dig8extrhp5t3" path="res://scripts/player_character.gd" id="1_5up26"]
+[ext_resource type="Texture2D" uid="uid://bel5jrp5vsjo8" path="res://assets/player.png" id="2_6r27q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfo3t"]
 radius = 6.0
@@ -25,13 +25,14 @@ shape = SubResource("CircleShape2D_tfo3t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 2
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_02ohv")
+rotation = 1.5707964
+texture = ExtResource("2_6r27q")
 
 [node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(6.5, -6.5)
 range_item_cull_mask = 3
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_4akcp")

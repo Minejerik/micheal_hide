@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://frc7evxadpfo"]
+[gd_scene load_steps=12 format=4 uid="uid://frc7evxadpfo"]
 
 [ext_resource type="Texture2D" uid="uid://dq17gliph1vl4" path="res://assets/tile_set.png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://b8xdjbi2afqa4" path="res://scenes/player_character.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bhxf1mfq2ad8a" path="res://scenes/objects/box.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://do3p6meuqq6c5" path="res://scenes/objects/ceiling_light.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bw5jb5niap3gy" path="res://scenes/objects/lamp.tscn" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://dw3obmgd0ame8" path="res://scenes/objects/bullet.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b5wa6lbvk47p3" path="res://scenes/objects/bullet_fire.tscn" id="7_272bh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lquwl"]
@@ -86,11 +85,8 @@ position = Vector2(296, 168)
 [node name="ceiling_light" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(376, 168)
 
-[node name="box2" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(200, 269)
-
-[node name="box3" parent="." instance=ExtResource("6_7mycd")]
-position = Vector2(235, 182)
-
 [node name="BulletFire" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(235, 153)
+
+[node name="lamp" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(180, 307)
