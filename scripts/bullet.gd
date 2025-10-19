@@ -19,7 +19,8 @@ func _on_collision_particles_finished() -> void:
 
 
 func _on_collision_area_body_entered(body: Node2D) -> void:
-		print(body)
+		if "box" in body.name:
+			body.handle_break()
 		$Collision_particles.emitting = true
 		linear_velocity = Vector2.ZERO
 		$Sprite2D.hide()

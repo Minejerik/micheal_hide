@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="2dsurban"
-run/main_scene="uid://nuq3xot526ie"
+run/main_scene="uid://cj2ydkbum3isy"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DataManager="*res://scripts/DataManager.gd"
 
 [display]
 

@@ -12,9 +12,14 @@ func _physics_process(_delta: float) -> void:
 func handle_collisions():
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
-		var body := collision.get_collider() as RigidBody2D
-		if body:
-			body.apply_central_force(-150.0 * collision.get_normal())
+		
+		
+		if "item" in str(collision.get_collider().name).to_lower():
+			collision.get_collider().pick_up()
+		else:
+			var body := collision.get_collider() as RigidBody2D
+			if body:
+				body.apply_central_force(-150.0 * collision.get_normal())
 	
 func get_player_input() -> void:
 	var vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

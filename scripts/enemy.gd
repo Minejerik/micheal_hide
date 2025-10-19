@@ -113,13 +113,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_body = body
 		
 		
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.name in target_names && body.name == player_body.name:
-		print("Player Exited")
-		alerted = false
-		player_in_sight = false
-		if default_state == State.WALKING:
-			init_walking()
+#func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_fire_timer_timeout() -> void:
@@ -130,3 +124,13 @@ func _on_fire_timer_timeout() -> void:
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 	move_and_slide()
+
+
+
+func _on_lose_interest_body_exited(body: Node2D) -> void:
+	if body.name in target_names && player_body && body.name == player_body.name:
+		print("Player Exited")
+		alerted = false
+		player_in_sight = false
+		if default_state == State.WALKING:
+			init_walking()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nks4ph1kbhyv"]
+[gd_scene load_steps=8 format=3 uid="uid://nks4ph1kbhyv"]
 
 [ext_resource type="Script" uid="uid://5ler2jy6lm5a" path="res://scripts/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://cnnlswbvjyipf" path="res://icon.svg" id="2_md0e3"]
@@ -15,6 +15,9 @@ gradient = SubResource("Gradient_md0e3")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ra3w"]
+radius = 83.02409
 
 [node name="enemy" type="CharacterBody2D"]
 texture_filter = 1
@@ -55,11 +58,15 @@ one_shot = true
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 10.0
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="PlayerFindTimeout" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="loseInterest" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="loseInterest"]
+shape = SubResource("CircleShape2D_4ra3w")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
@@ -67,3 +74,5 @@ autostart = true
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_target_reached_nav"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="PlayerFindTimeout" to="." method="_on_player_find_timeout_timeout"]
+[connection signal="area_exited" from="loseInterest" to="." method="_on_lose_interest_area_exited"]
+[connection signal="body_exited" from="loseInterest" to="." method="_on_lose_interest_body_exited"]
