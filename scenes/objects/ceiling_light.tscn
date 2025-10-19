@@ -12,7 +12,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [node name="ceiling_light" type="Node2D"]
-z_index = 10
+z_index = -1
 y_sort_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://nks4ph1kbhyv"]
+[gd_scene load_steps=7 format=3 uid="uid://nks4ph1kbhyv"]
 
 [ext_resource type="Script" uid="uid://5ler2jy6lm5a" path="res://scripts/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://cnnlswbvjyipf" path="res://icon.svg" id="2_md0e3"]
@@ -6,9 +6,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfo3t"]
 radius = 6.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 78.10249
 
 [sub_resource type="Gradient" id="Gradient_md0e3"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -26,30 +23,47 @@ script = ExtResource("1_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tfo3t")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 3
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_md0e3")
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_md0e3")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-16, 19, -16, -18, 16, -18, 83, -40, 83, 40, 16, 19)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_4ra3w")
 texture_scale = 1.4
+metadata/_edit_lock_ = true
 
 [node name="BulletFire" parent="." instance=ExtResource("3_4ra3w")]
 position = Vector2(9, 0)
+metadata/_edit_lock_ = true
 
 [node name="FireTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="PlayerFindTimeout" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_target_reached_nav"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="timeout" from="PlayerFindTimeout" to="." method="_on_player_find_timeout_timeout"]
