@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy0qk3gtegft6"]
+
+[ext_resource type="Script" uid="uid://dfy3ruas14qfh" path="res://scripts/computer.gd" id="1_jgubl"]
+[ext_resource type="Texture2D" uid="uid://cnnlswbvjyipf" path="res://icon.svg" id="1_nhgpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgubl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhgpl"]
+size = Vector2(21, 29)
+
+[node name="Computer" type="StaticBody2D"]
+script = ExtResource("1_jgubl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_nhgpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jgubl")
+
+[node name="UseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UseArea"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_nhgpl")
+
+[connection signal="body_entered" from="UseArea" to="." method="_on_use_area_body_entered"]
+[connection signal="body_exited" from="UseArea" to="." method="_on_use_area_body_exited"]

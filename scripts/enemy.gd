@@ -28,6 +28,7 @@ enum State {WALKING, WANDERING, PURSUING}
 @export var current_state = State.WALKING
 @export var default_state = State.WALKING
 
+
 # The current node in the path that it should go towards when walking
 var WALKING_current_node = 0
 var WALKING_target_node = null
@@ -87,6 +88,8 @@ func handle_pursuing():
 	if distance_to_player < 100 && firetimer.is_stopped():
 		firetimer.start()
 		
+		
+
 	
 func check_player_visible():
 	# Checks if the player is not blocked by anything, using a raycast
@@ -95,7 +98,7 @@ func check_player_visible():
 	var result = space_state.intersect_ray(query)
 	if result:
 		if result.collider == player_body:
-			nav_agent.target_position = player_body.global_position
+			#nav_agent.target_position = player_body.global_position
 			return true
 	return false
 
@@ -117,7 +120,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_fire_timer_timeout() -> void:
-	if current_state == State.PURSUING:
+	if current_state == State.PURSUING && check_player_visible():
 		bulletfire.fire_bullet(global_rotation, 150)
 
 

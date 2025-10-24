@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dfnua7coniato"]
+[gd_scene load_steps=18 format=4 uid="uid://dfnua7coniato"]
 
 [ext_resource type="Texture2D" uid="uid://dq17gliph1vl4" path="res://assets/tile_set.png" id="1_34dne"]
 [ext_resource type="PackedScene" uid="uid://bhxf1mfq2ad8a" path="res://scenes/objects/box.tscn" id="2_jy3m3"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://nks4ph1kbhyv" path="res://scenes/enemy.tscn" id="6_vin5p"]
 [ext_resource type="PackedScene" uid="uid://b8xdjbi2afqa4" path="res://scenes/player_character.tscn" id="7_leiea"]
 [ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_win31.tscn" id="8_echp5"]
+[ext_resource type="PackedScene" uid="uid://bjt47vmyftovp" path="res://scenes/items/ITEM_xbox_card.tscn" id="9_jy3m3"]
+[ext_resource type="PackedScene" uid="uid://dhm1q30s8i3yv" path="res://scenes/HUD.tscn" id="10_tejjl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_272bh"]
 vertices = PackedVector2Array(474, 266, 474, 70, 1110, 26, 1110, 630, 26, 26, 278, 70, 314, 154, 314, 106, 438, 106, 438, 230, 314, 230, 314, 182, 278, 154, 278, 182, 278, 266, 390, 266, 390, 378, 106, 266, 26, 630, 106, 182, 426, 378, 426, 266, 54, 266, 54, 182)
@@ -131,3 +133,9 @@ curve = SubResource("Curve2D_272bh")
 
 [node name="ItemWin31" parent="." instance=ExtResource("8_echp5")]
 position = Vector2(376, 168)
+allowed_to_pick_up = true
+
+[node name="item_xbox_card" parent="." instance=ExtResource("9_jy3m3")]
+position = Vector2(177, 182)
+
+[node name="Hud" parent="." instance=ExtResource("10_tejjl")]

@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export_range(0, 1000) var speed := 60
 
 func _physics_process(_delta: float) -> void:
-	look_at(get_global_mouse_position())
 	get_player_input()
 	if move_and_slide():
 		handle_collisions()
@@ -12,10 +11,9 @@ func _physics_process(_delta: float) -> void:
 func handle_collisions():
 	for i in get_slide_collision_count():
 		var collision := get_slide_collision(i)
-		
-		
 		if "item" in str(collision.get_collider().name).to_lower():
-			collision.get_collider().pick_up()
+			if collision.get_collider().allow_pick_up():
+				collision.get_collider().pick_up()
 		else:
 			var body := collision.get_collider() as RigidBody2D
 			if body:
@@ -23,4 +21,8 @@ func handle_collisions():
 	
 func get_player_input() -> void:
 	var vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = vector * speed
+	if not DataManager.computer_screen_open:
+		look_at(get_global_mouse_position())
+		velocity = vector * speed
+	else:
+		velocity = Vector2.ZERO

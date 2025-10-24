@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://nks4ph1kbhyv"]
 
 [ext_resource type="Script" uid="uid://5ler2jy6lm5a" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://cnnlswbvjyipf" path="res://icon.svg" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://cauyqsot87i6m" path="res://assets/enemy.png" id="2_4ra3w"]
 [ext_resource type="PackedScene" uid="uid://b5wa6lbvk47p3" path="res://scenes/objects/bullet_fire.tscn" id="3_4ra3w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfo3t"]
@@ -31,8 +31,7 @@ metadata/_edit_lock_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 3
 rotation = 1.5707964
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_md0e3")
+texture = ExtResource("2_4ra3w")
 metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
