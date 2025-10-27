@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dupxknbr5latb" path="res://assets/raw/road_center.png" id="4_yskkl"]
 [ext_resource type="PackedScene" uid="uid://do3p6meuqq6c5" path="res://scenes/objects/ceiling_light.tscn" id="6_yskkl"]
 [ext_resource type="Script" uid="uid://bmlf5eal2bs6o" path="res://scripts/level_teleport.gd" id="7_d1b6h"]
-[ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_win31.tscn" id="8_cchwu"]
+[ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_OS31.tscn" id="8_cchwu"]
 [ext_resource type="PackedScene" uid="uid://dy0qk3gtegft6" path="res://scenes/objects/computer.tscn" id="10_58gng"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_d1b6h"]
@@ -17,8 +17,11 @@ tile_data = PackedInt32Array(0, 131072, 1, 65536, 0, 1, 131072, 0, 1, 196608, 13
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q28r8"]
 texture = ExtResource("1_ikf4c")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -49,6 +52,7 @@ texture = ExtResource("4_yskkl")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2vl8h"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_q28r8")
 sources/1 = SubResource("TileSetAtlasSource_2vl8h")
 sources/2 = SubResource("TileSetAtlasSource_d1b6h")
@@ -104,7 +108,7 @@ script = ExtResource("7_d1b6h")
 position = Vector2(424, 224)
 shape = SubResource("RectangleShape2D_d1b6h")
 
-[node name="item_win31" parent="." instance=ExtResource("8_cchwu")]
+[node name="item_os31" parent="." instance=ExtResource("8_cchwu")]
 position = Vector2(329, 185)
 
 [node name="Computer" parent="." instance=ExtResource("10_58gng")]

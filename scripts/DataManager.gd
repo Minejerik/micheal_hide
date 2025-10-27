@@ -8,22 +8,41 @@ var _temp_goal_collected = ""
 var _goal_collected_this_level = false
 var _next_level = "level1"
 var computer_screen_open = false
+var target_level = null
+
+var levels = [
+	"level1",
+	"level2",
+	"level3",
+	"level4"
+]
+
+var levels_unlocked = [
+	"level1"
+]
 
 var _level_unlocks = {
-	"WIN31":"level2"
+	"OS31":"level2"
+}
+
+var level_info = {
+	"level1": {"name": "Level 1", "desc": "Find Michealsoft OS 3.1"},
+	"level2": {"name": "Level 2", "desc": "Find Michealsoft OS 3.1"},
+	"level3": {"name": "Level 3", "desc": "Find Michealsoft OS 3.1"},
+	"level4": {"name": "Level 4", "desc": "Find Michealsoft OS 3.1"},
 }
 
 var goal_ids = [
-	"WIN31"
+	"OS31"
 ]
 
 var _item_real_names = {
-	"WIN31": "Windows 3.1",
+	"OS31": "Michealsoft OS 3.1",
 	"XBOXCARD": "Xbox gift card"
 }
 
 # ITEM IDS
-# WIN31 - Windows 3.1
+# OS31 - OS 3.1
 
 func collect_goal(item_name):
 	if item_name not in _goals_collected:
@@ -36,10 +55,11 @@ func level_win():
 		_goals_collected.append(_temp_goal_collected)
 		if _temp_goal_collected in _level_unlocks.keys():
 			_next_level = _level_unlocks[_temp_goal_collected]
+			levels_unlocked.append(_next_level)
 
 func level_loss():
 	reset_level()
-	get_tree().change_scene_to_file("res://scenes/levels/"+_next_level+".tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/"+target_level+".tscn")
 
 func reset_level():
 	_temp_goal_collected = ""

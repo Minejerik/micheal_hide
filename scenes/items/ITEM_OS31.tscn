@@ -6,9 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u7gd"]
 size = Vector2(14, 17)
 
-[node name="item_win31" type="StaticBody2D"]
+[node name="item_os31" type="StaticBody2D"]
 texture_filter = 1
 script = ExtResource("1_7l24j")
+item_name = "OS31"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3u7gd")

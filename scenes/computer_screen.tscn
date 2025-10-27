@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx684w2x0u3u6"]
+[gd_scene load_steps=4 format=3 uid="uid://dx684w2x0u3u6"]
 
 [ext_resource type="Script" uid="uid://bayvsol38bus1" path="res://scripts/hud/computer_screen.gd" id="1_ucd4v"]
 [ext_resource type="Theme" uid="uid://cv0nao0t5s5k4" path="res://assets/themes/computer_screen.tres" id="2_gkxp2"]
+[ext_resource type="ButtonGroup" uid="uid://1vb3d1v87i2b" path="res://assets/themes/computer_screen_buttons.tres" id="3_hd5qy"]
 
 [node name="ComputerScreen" type="CanvasLayer"]
 script = ExtResource("1_ucd4v")
+
+[node name="ButtonTemplate" type="Button" parent="."]
+visible = false
+offset_top = 54.0
+offset_right = 222.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 64
+toggle_mode = true
+button_group = ExtResource("3_hd5qy")
+text = "Level 1"
+metadata/level_name = ""
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
@@ -82,78 +94,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.34
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer"]
+[node name="ButtonContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer"]
 layout_mode = 2
-
-[node name="Button" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button2" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button3" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button4" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button5" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button6" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button7" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button8" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button9" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
-
-[node name="Button10" type="Button" parent="Panel/VBoxContainer/HSplitContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level 1"
 
 [node name="Control" type="Control" parent="Panel/VBoxContainer/HSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="Panel/VBoxContainer/HSplitContainer/Control"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -449.0
-offset_top = -63.0
-offset_right = 441.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 32
-text = "Set Teleporter Destination!"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HSplitContainer/Control"]
 layout_mode = 1
@@ -164,17 +110,24 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HSplitContainer/Control/VBoxContainer"]
+[node name="levelText" type="Label" parent="Panel/VBoxContainer/HSplitContainer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 128
-text = "Level 1"
+text = "Select A Level"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer/HSplitContainer/Control/VBoxContainer"]
+[node name="Desc" type="RichTextLabel" parent="Panel/VBoxContainer/HSplitContainer/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 48
-text = "Blalsalllasldlasd
-Get the windows 3.1"
+text = "Set the teleporter destination
+Then walk on the teleporter to the right"
 fit_content = true
 
+[node name="SetButton" type="Button" parent="Panel/VBoxContainer/HSplitContainer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 32
+text = "Set Teleporter Destination!"
+
 [connection signal="pressed" from="Panel/VBoxContainer/Panel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HSplitContainer/Control/VBoxContainer/SetButton" to="." method="_on_set_button_pressed"]

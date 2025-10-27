@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bw5jb5niap3gy" path="res://scenes/objects/lamp.tscn" id="5_wbu1v"]
 [ext_resource type="PackedScene" uid="uid://nks4ph1kbhyv" path="res://scenes/enemy.tscn" id="6_vin5p"]
 [ext_resource type="PackedScene" uid="uid://b8xdjbi2afqa4" path="res://scenes/player_character.tscn" id="7_leiea"]
-[ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_win31.tscn" id="8_echp5"]
+[ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_OS31.tscn" id="8_echp5"]
 [ext_resource type="PackedScene" uid="uid://bjt47vmyftovp" path="res://scenes/items/ITEM_xbox_card.tscn" id="9_jy3m3"]
 [ext_resource type="PackedScene" uid="uid://dhm1q30s8i3yv" path="res://scenes/HUD.tscn" id="10_tejjl"]
 

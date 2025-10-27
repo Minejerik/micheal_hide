@@ -30,7 +30,7 @@ enum State {WALKING, WANDERING, PURSUING}
 
 
 # The current node in the path that it should go towards when walking
-var WALKING_current_node = 0
+@export var WALKING_current_node = 0
 var WALKING_target_node = null
 
 var speed = 50

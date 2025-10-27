@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nks4ph1kbhyv" path="res://scenes/enemy.tscn" id="6_2xkjh"]
 [ext_resource type="PackedScene" uid="uid://bmclc7ydfbwvd" path="res://scenes/objects/home_teleport.tscn" id="7_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://b8xdjbi2afqa4" path="res://scenes/player_character.tscn" id="7_dj21o"]
-[ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_win31.tscn" id="8_8a7m2"]
+[ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_OS31.tscn" id="8_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://dhm1q30s8i3yv" path="res://scenes/HUD.tscn" id="8_plydf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_272bh"]
@@ -79,9 +79,9 @@ point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_1seuy"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 271, 368, 0, 0, 0, 0, 479, 367, 0, 0, 0, 0, 479, 128, 0, 0, 0, 0, 272, 128, 0, 0, 0, 0, 272, 128, 0, 0, 0, 0, 272, 128)
+"points": PackedVector2Array(0, 0, 0, 0, 272, 128, 0, 0, 0, 0, 272, 368, 0, 0, 0, 0, 480, 368, 0, 0, 0, 0, 480, 128, 0, 0, 0, 0, 272, 128)
 }
-point_count = 6
+point_count = 5
 
 [node name="Level1" type="Node2D"]
 
@@ -117,14 +117,17 @@ path = NodePath("../enemy1path")
 
 [node name="enemy2" parent="." node_paths=PackedStringArray("path") instance=ExtResource("6_2xkjh")]
 position = Vector2(307, 128)
+rotation = 3.1415927
 target_names = ["player"]
 path = NodePath("../enemy2path")
 
 [node name="enemy1path" type="Path2D" parent="."]
 curve = SubResource("Curve2D_dywbp")
+metadata/_edit_lock_ = true
 
 [node name="enemy2path" type="Path2D" parent="."]
 curve = SubResource("Curve2D_1seuy")
+metadata/_edit_lock_ = true
 
 [node name="box" parent="." instance=ExtResource("2_vkq25")]
 position = Vector2(296, 248)
