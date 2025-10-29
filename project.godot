@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Micheal Hide"
-run/main_scene="uid://cj2ydkbum3isy"
+run/main_scene="uid://e6t3dpyhffej"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

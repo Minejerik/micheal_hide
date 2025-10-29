@@ -27,7 +27,7 @@ var _level_unlocks = {
 
 var level_info = {
 	"level1": {"name": "Level 1", "desc": "Find Michealsoft OS 3.1"},
-	"level2": {"name": "Level 2", "desc": "Find Michealsoft OS 3.1"},
+	"level2": {"name": "Level 2", "desc": "Find Michealsoft OS 95"},
 	"level3": {"name": "Level 3", "desc": "Find Michealsoft OS 3.1"},
 	"level4": {"name": "Level 4", "desc": "Find Michealsoft OS 3.1"},
 }
