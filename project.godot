@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Micheal Hide"
-run/main_scene="uid://e6t3dpyhffej"
+run/main_scene="uid://cj2ydkbum3isy"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,10 @@ window/size/viewport_width=1200
 window/size/viewport_height=800
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+
+[editor]
+
+movie_writer/movie_file="/home/minejerik/micheal_hide/assets/banner.png"
 
 [editor_plugins]
 

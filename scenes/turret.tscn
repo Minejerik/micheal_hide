@@ -17,7 +17,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ra3w"]
-radius = 83.02409
+radius = 193.04144
 
 [node name="turret" type="CharacterBody2D"]
 texture_filter = 1
@@ -38,7 +38,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-16, 19, -16, -18, 16, -18, 83, -40, 83, 40, 16, 19)
+polygon = PackedVector2Array(-16, 19, -16, -18, 16, -18, 165, -18, 165, 19, 16, 19)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 shadow_enabled = true
@@ -51,7 +51,7 @@ position = Vector2(9, 0)
 metadata/_edit_lock_ = true
 
 [node name="FireTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 one_shot = true
 
 [node name="PlayerFindTimeout" type="Timer" parent="."]

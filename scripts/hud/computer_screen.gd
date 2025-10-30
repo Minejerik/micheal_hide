@@ -30,3 +30,5 @@ func _change_text_button_press(button):
 
 func _on_set_button_pressed() -> void:
 	DataManager.target_level = open_level
+	DataManager.computer_screen_open = false
+	queue_free()

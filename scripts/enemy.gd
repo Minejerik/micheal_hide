@@ -36,8 +36,8 @@ var WALKING_target_node = null
 var speed = 50
 
 func _ready():
-	WALKING_target_node = path.curve.get_point_position(0)
 	if default_state == State.WALKING:
+		WALKING_target_node = path.curve.get_point_position(0)
 		init_walking()
 
 func _physics_process(_delta: float) -> void:

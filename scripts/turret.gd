@@ -2,8 +2,12 @@ extends CharacterBody2D
 
 # Is the player within the area2d?
 var player_in_sight = false
+var player_raycast = false
 # Body of the player, used to look at
 var player_body = null
+
+
+@onready var original_rotation = rotation
 
 # The bullet firer
 @onready var bulletfire = $BulletFire
@@ -14,11 +18,16 @@ var player_body = null
 
 func _physics_process(_delta: float) -> void:
 	if player_in_sight:
-		handle_pursuing()
+		player_raycast = check_player_visible()
+		if player_raycast:
+			handle_pursuing()
+	else:
+			rotation = original_rotation
 	
 func handle_pursuing():
+	look_at(player_body.global_position)
 	var distance_to_player = global_position.distance_to(player_body.global_position)
-	if distance_to_player < 100 && firetimer.is_stopped():
+	if distance_to_player < 300 && firetimer.is_stopped():
 		firetimer.start()
 
 func check_player_visible():
@@ -36,6 +45,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name in target_names:
 		print("Player Entered")
 		player_body = body
+		player_in_sight = true
 
 func _on_fire_timer_timeout() -> void:
 	if check_player_visible():

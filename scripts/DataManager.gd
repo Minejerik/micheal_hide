@@ -22,7 +22,8 @@ var levels_unlocked = [
 ]
 
 var _level_unlocks = {
-	"OS31":"level2"
+	"OS31":"level2",
+	"OS95":"level3"
 }
 
 var level_info = {
@@ -33,11 +34,13 @@ var level_info = {
 }
 
 var goal_ids = [
-	"OS31"
+	"OS31",
+	"OS95"
 ]
 
 var _item_real_names = {
 	"OS31": "Michealsoft OS 3.1",
+	"OS95": "Michealsoft OS 95",
 	"XBOXCARD": "Xbox gift card"
 }
 

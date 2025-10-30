@@ -12,12 +12,10 @@ func _on_file_id_pressed(id: int) -> void:
 			get_tree().quit()
 
 func credits():
-	# Show Credits
-	pass
+	$Credits.visible = true
 	
 func attribution():
-	# Show Attribution
-	pass
+	$Attribution.visible = true
 	
 
 func _on_about_id_pressed(id: int) -> void:

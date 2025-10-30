@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var id_to_obj = {
-	"OS31": $item_os31
+	"OS31": $item_os31,
+	"OS95": $item_os95
 }
 
 func _ready() -> void:

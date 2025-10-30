@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyxi80xx43p3v"]
+
+[ext_resource type="Script" uid="uid://yafpfw807417" path="res://scripts/items/item.gd" id="1_vxelv"]
+[ext_resource type="Texture2D" uid="uid://bme0bni70yfry" path="res://assets/items/os_95.png" id="2_vxelv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u7gd"]
+size = Vector2(14, 17)
+
+[node name="item_os95" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_vxelv")
+allowed_to_pick_up = true
+item_name = "OS95"
+isgoal = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vxelv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_3u7gd")
