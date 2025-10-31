@@ -89,7 +89,8 @@ tile_set = SubResource("TileSet_2vl8h")
 navigation_enabled = false
 
 [node name="player" parent="." instance=ExtResource("3_2vl8h")]
-position = Vector2(83, 144)
+position = Vector2(323, 241)
+rotation = -1.5707964
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.14117648, 0.16078432, 0.23137255, 1)
@@ -104,14 +105,24 @@ position = Vector2(150, 133)
 position = Vector2(-1, -122)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(7, 210)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-72, -246)
 shape = SubResource("RectangleShape2D_yskkl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
+position = Vector2(-10, -293)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(-71, 404)
+shape = SubResource("RectangleShape2D_yskkl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(341, 71)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D"]
 position = Vector2(-71, 404)
 shape = SubResource("RectangleShape2D_yskkl")
 
@@ -123,14 +134,14 @@ position = Vector2(424, 224)
 shape = SubResource("RectangleShape2D_d1b6h")
 
 [node name="item_os31" parent="." instance=ExtResource("8_cchwu")]
-position = Vector2(329, 185)
+position = Vector2(312, 184)
 allowed_to_pick_up = false
 
 [node name="Computer" parent="." instance=ExtResource("10_58gng")]
-position = Vector2(375, 184)
+position = Vector2(375, 183)
 
 [node name="item_os95" parent="." instance=ExtResource("11_lqded")]
-position = Vector2(312, 185)
+position = Vector2(295, 184)
 allowed_to_pick_up = false
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]

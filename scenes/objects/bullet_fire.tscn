@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5wa6lbvk47p3"]
+[gd_scene load_steps=3 format=3 uid="uid://b5wa6lbvk47p3"]
 
 [ext_resource type="Script" uid="uid://csmm005cfjv67" path="res://scripts/bullet_fire.gd" id="1_ali4d"]
+[ext_resource type="AudioStream" uid="uid://crrrjpyd84ixk" path="res://assets/audio/bulletFire.wav" id="2_squl7"]
 
 [node name="BulletFire" type="Node2D"]
 script = ExtResource("1_ali4d")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="FireSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_squl7")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

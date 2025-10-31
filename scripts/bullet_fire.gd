@@ -6,6 +6,7 @@ func fire_bullet(rot, power):
 	var bullet_real = bullet.instantiate()
 	bullet_real.fire(rot, power, global_position)
 	get_tree().root.add_child(bullet_real)
+	$FireSoundPlayer.play()
 	
 #func _on_timer_timeout() -> void:
 	#fire_bullet()
