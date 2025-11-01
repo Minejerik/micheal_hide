@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhxf1mfq2ad8a"]
+[gd_scene load_steps=7 format=3 uid="uid://bhxf1mfq2ad8a"]
 
 [ext_resource type="Texture2D" uid="uid://b65pcrvcajssa" path="res://assets/box.png" id="1_g2tbl"]
 [ext_resource type="Script" uid="uid://c1mdow0efvu1f" path="res://scripts/box.gd" id="1_tf0hf"]
+[ext_resource type="Texture2D" uid="uid://puvhnftec2vx" path="res://assets/box_broken.png" id="3_vfogt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oq5cr"]
 size = Vector2(16, 16)
@@ -48,8 +49,8 @@ affect_navigation_mesh = true
 
 [node name="BreakParticles" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 2
-texture = ExtResource("1_g2tbl")
+amount = 4
+texture = ExtResource("3_vfogt")
 lifetime = 0.5
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_tf0hf")

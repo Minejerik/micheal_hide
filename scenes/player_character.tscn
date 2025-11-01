@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8xdjbi2afqa4"]
+[gd_scene load_steps=7 format=3 uid="uid://b8xdjbi2afqa4"]
 
 [ext_resource type="Script" uid="uid://dig8extrhp5t3" path="res://scripts/player_character.gd" id="1_5up26"]
 [ext_resource type="Texture2D" uid="uid://bel5jrp5vsjo8" path="res://assets/player.png" id="2_6r27q"]
@@ -14,6 +14,9 @@ gradient = SubResource("Gradient_5up26")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r27q"]
+size = Vector2(9, 5.5)
 
 [node name="player" type="CharacterBody2D"]
 texture_filter = 1
@@ -40,3 +43,9 @@ texture_scale = 2.0
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="breakarea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_6r27q")

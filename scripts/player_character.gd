@@ -18,6 +18,15 @@ func handle_collisions():
 			var body := collision.get_collider() as RigidBody2D
 			if body:
 				body.apply_central_force(-150.0 * collision.get_normal())
+				
+func _input(event: InputEvent) -> void:
+		if event.is_action("break"):
+			var in_shape = $breakarea.get_overlapping_bodies()
+			for shape in in_shape:
+				if "box" in shape.name:
+					shape.handle_break(true)
+					break
+		
 	
 func get_player_input() -> void:
 	var vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

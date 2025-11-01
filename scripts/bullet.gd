@@ -20,7 +20,7 @@ func _on_collision_particles_finished() -> void:
 
 func _on_collision_area_body_entered(body: Node2D) -> void:
 		if "box" in body.name:
-			body.handle_break()
+			body.handle_break(false)
 		if "player" in body.name:
 			DataManager.level_loss()
 		$Collision_particles.emitting = true
