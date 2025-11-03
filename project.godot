@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DataManager="*res://scripts/DataManager.gd"
+SettingsManager="*res://scripts/SettingsManager.gd"
 
 [display]
 
@@ -25,6 +26,7 @@ window/size/viewport_width=1200
 window/size/viewport_height=800
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/movie_file="/home/minejerik/micheal_hide/assets/banner.png"
 
 [editor]
 

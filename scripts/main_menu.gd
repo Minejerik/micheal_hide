@@ -6,10 +6,14 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_file_id_pressed(id: int) -> void:
-	print(id)
 	match id:
 		0:
+			settings()
+		1:
 			get_tree().quit()
+
+func settings():
+	$Settings.visible = true
 
 func credits():
 	$Credits.visible = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj2ydkbum3isy"]
+[gd_scene load_steps=4 format=3 uid="uid://cj2ydkbum3isy"]
 
 [ext_resource type="Script" uid="uid://bqgge55grhe8h" path="res://scripts/main_menu.gd" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://bw1w8bw20w1yj" path="res://scripts/hud/popup_window.gd" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://dx81vogehikp" path="res://scripts/hud/settings.gd" id="3_fu7sn"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -29,9 +31,11 @@ grow_vertical = 2
 
 [node name="File" type="PopupMenu" parent="Panel/MenuBar"]
 oversampling_override = 1.0
-item_count = 1
-item_0/text = "Exit"
+item_count = 2
+item_0/text = "Settings"
 item_0/id = 0
+item_1/text = "Exit"
+item_1/id = 1
 
 [node name="About" type="PopupMenu" parent="Panel/MenuBar"]
 item_count = 2
@@ -86,6 +90,75 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Start Game"
 
+[node name="Settings" type="Window" parent="."]
+oversampling_override = 1.0
+title = "Settings"
+initial_position = 1
+size = Vector2i(175, 85)
+visible = false
+unresizable = true
+script = ExtResource("3_fu7sn")
+
+[node name="GridContainer" type="GridContainer" parent="Settings"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="AudioLabel" type="Label" parent="Settings/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Audio:"
+
+[node name="AudioButton" type="CheckButton" parent="Settings/GridContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="Settings/GridContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="VolumeSlider" type="HSlider" parent="Settings/GridContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="SaveButton" type="Button" parent="Settings"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Save Changes"
+
+[node name="Fact" type="Window" parent="."]
+oversampling_override = 1.0
+title = "Fun Fact"
+position = Vector2i(737, 670)
+size = Vector2i(400, 24)
+unresizable = true
+script = ExtResource("2_7vrkn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fact"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Fact/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Levels 3 and 4 were meant to be the first 2 levels!"
+
 [node name="Credits" type="Window" parent="."]
 oversampling_override = 1.0
 title = "Credits"
@@ -122,3 +195,6 @@ text = "Opportunity - Hack Club Milkyway"
 [connection signal="id_pressed" from="Panel/MenuBar/File" to="." method="_on_file_id_pressed"]
 [connection signal="id_pressed" from="Panel/MenuBar/About" to="." method="_on_about_id_pressed"]
 [connection signal="pressed" from="Start/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="visibility_changed" from="Settings" to="." method="_on_settings_visibility_changed"]
+[connection signal="visibility_changed" from="Settings" to="Settings" method="_on_visibility_changed"]
+[connection signal="pressed" from="Settings/SaveButton" to="Settings" method="_on_save_button_pressed"]
