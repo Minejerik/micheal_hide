@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://fnkka7616mnc"]
+
+[ext_resource type="Script" uid="uid://yafpfw807417" path="res://scripts/items/item.gd" id="1_e1ryu"]
+[ext_resource type="Texture2D" uid="uid://ciseh6jlgulda" path="res://assets/items/os_me.png" id="2_e1ryu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u7gd"]
+size = Vector2(14, 17)
+
+[node name="item_osme" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_e1ryu")
+allowed_to_pick_up = true
+item_name = "OSME"
+isgoal = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e1ryu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_3u7gd")

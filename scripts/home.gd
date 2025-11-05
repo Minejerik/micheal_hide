@@ -4,7 +4,8 @@ extends Node2D
 	"OS31": $item_os31,
 	"OS95": $item_os95,
 	"OS98": $item_os98,
-	"OS2000": $item_os2000
+	"OS2000": $item_os2000,
+	"OSME": $item_osme
 }
 
 func _ready() -> void:

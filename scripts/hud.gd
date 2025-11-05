@@ -10,7 +10,7 @@ func _ready() -> void:
 func send_notification(text):
 	var temp_label = $notificationTemplate.duplicate()
 	temp_label.show()
-	temp_label.text = text
+	temp_label.set_text(text)
 	$notifications.add_child(temp_label)
 	texts.append(temp_label)
 	temp_label.start_timer()

@@ -14,7 +14,9 @@ var levels = [
 	"level1",
 	"level2",
 	"level3",
-	"level4"
+	"level4",
+	"level5",
+	"end"
 ]
 
 var levels_unlocked = [
@@ -25,7 +27,8 @@ var _level_unlocks = {
 	"OS31":"level2",
 	"OS95":"level3",
 	"OS98":"level4",
-	#"OS2000":"level4",
+	"OS2000":"level5",
+	"OSME":"end",
 }
 
 var level_info = {
@@ -33,13 +36,16 @@ var level_info = {
 	"level2": {"name": "Level 2", "desc": "Find Michealsoft OS 95"},
 	"level3": {"name": "Level 3", "desc": "Find Michealsoft OS 98"},
 	"level4": {"name": "Level 4", "desc": "Find Michealsoft OS 2000"},
+	"level5": {"name": "Level 5", "desc": "Find Michealsoft OS Micheal Edition"},
+	"end": {"name": "???", "desc": "The End?"},
 }
 
 var goal_ids = [
 	"OS31",
 	"OS95",
 	"OS98",
-	"OS2000"
+	"OS2000",
+	"OSME"
 ]
 
 var _item_real_names = {
@@ -47,6 +53,7 @@ var _item_real_names = {
 	"OS95": "Michealsoft OS 95",
 	"OS98": "Michealsoft OS 98",
 	"OS2000": "Michealsoft OS 2000",
+	"OSME": "Michealsoft OS ME",
 	"XBOXCARD": "Xbox gift card"
 }
 

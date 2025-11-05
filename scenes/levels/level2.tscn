@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://e6t3dpyhffej"]
+[gd_scene load_steps=16 format=4 uid="uid://dlq8mg7ro1ho3"]
 
 [ext_resource type="Texture2D" uid="uid://dq17gliph1vl4" path="res://assets/tile_set.png" id="1_k0mew"]
 [ext_resource type="PackedScene" uid="uid://b8xdjbi2afqa4" path="res://scenes/player_character.tscn" id="2_b0vvs"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bmclc7ydfbwvd" path="res://scenes/objects/home_teleport.tscn" id="7_b4tpv"]
 [ext_resource type="PackedScene" uid="uid://nks4ph1kbhyv" path="res://scenes/enemy.tscn" id="7_dj4wq"]
 [ext_resource type="PackedScene" uid="uid://dhm1q30s8i3yv" path="res://scenes/HUD.tscn" id="8_hkuam"]
-[ext_resource type="PackedScene" uid="uid://b108gaoowk5b1" path="res://scenes/interaction_popup.tscn" id="8_k0mew"]
-[ext_resource type="PackedScene" uid="uid://dyxi80xx43p3v" path="res://scenes/items/ITEM_OS95.tscn" id="10_oyk6k"]
+[ext_resource type="PackedScene" uid="uid://cbqvfxte700bv" path="res://scenes/interaction_popup.tscn" id="8_k0mew"]
+[ext_resource type="PackedScene" uid="uid://ccxwvt757t7fo" path="res://scenes/items/ITEM_OS95.tscn" id="10_oyk6k"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_272bh"]
 vertices = PackedVector2Array(406, 90, 406, 214, 362.9922, 214, 361.3828, 208, 363.52344, 200, 361.3828, 192, 363.52344, 184, 362, 178.28906, 369.7578, 120.921875, 376.92188, 113.75781, 362, 122.97656, 392.92188, 97.75781, 394.9922, 90, 378.77344, 106.77344, 385.7578, 104.921875, 454, 26, 454, 278, 442, 250, 442, 54, 26, 278, 198, 250, 26, 26, 198, 54, 198, 166, 324.47656, 200, 298, 186, 298, 118, 324.47656, 184, 326.60938, 192, 326, 178.28906, 326, 90, 234, 90, 262, 118, 234, 138, 262, 186, 198, 138, 234, 166, 234, 214, 326.60938, 208, 325.0078, 214)
@@ -116,9 +116,6 @@ position = Vector2(122, 147)
 [node name="HomeTeleport" parent="." instance=ExtResource("7_b4tpv")]
 position = Vector2(20, 152)
 
-[node name="item_os95" parent="." instance=ExtResource("10_oyk6k")]
-position = Vector2(360, 87)
-
 [node name="enemy" parent="." node_paths=PackedStringArray("path") instance=ExtResource("7_dj4wq")]
 position = Vector2(248, 105)
 path = NodePath("../enemyPath")
@@ -154,3 +151,6 @@ position = Vector2(408, 88)
 [node name="InteractionPopup" parent="." instance=ExtResource("8_k0mew")]
 position = Vector2(183, 152)
 to_show = "Avoid the Tuxes"
+
+[node name="item_os95" parent="." instance=ExtResource("10_oyk6k")]
+position = Vector2(360, 87)

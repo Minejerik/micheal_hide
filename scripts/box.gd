@@ -16,14 +16,14 @@ func handle_break(player_break):
 
 
 func _on_break_particles_finished() -> void:
-	if not by_player:
-		if (randi()%20) > 15:
-			var xbox_card = xbox_card_scene.instantiate()
-			xbox_card.position = position
-			get_tree().get_root().add_child(xbox_card)
-	else:
-		if (randi()%100) > 90:
-			var xbox_card = xbox_card_scene.instantiate()
-			xbox_card.position = position
-			get_tree().get_root().add_child(xbox_card)
+	#if not by_player:
+		#if (randi()%20) > 15:
+			#var xbox_card = xbox_card_scene.instantiate()
+			#xbox_card.position = position
+			#get_tree().get_root().add_child(xbox_card)
+	#else:
+		#if (randi()%100) > 90:
+			#var xbox_card = xbox_card_scene.instantiate()
+			#xbox_card.position = position
+			#get_tree().get_root().add_child(xbox_card)
 	queue_free()
