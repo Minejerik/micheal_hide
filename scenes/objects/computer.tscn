@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy0qk3gtegft6"]
+[gd_scene load_steps=5 format=3 uid="uid://dy0qk3gtegft6"]
 
 [ext_resource type="Script" uid="uid://dfy3ruas14qfh" path="res://scripts/computer.gd" id="1_jgubl"]
 [ext_resource type="Texture2D" uid="uid://dwi0dkkjsr0bc" path="res://assets/computer.png" id="2_jgubl"]
-[ext_resource type="PackedScene" uid="uid://cbqvfxte700bv" path="res://scenes/interaction_popup.tscn" id="3_op1w6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgubl"]
 size = Vector2(16, 16)
@@ -25,9 +24,6 @@ shape = SubResource("RectangleShape2D_jgubl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UseArea"]
 position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_nhgpl")
-
-[node name="InteractionPopup" parent="." instance=ExtResource("3_op1w6")]
-position = Vector2(0, 2)
 
 [connection signal="body_entered" from="UseArea" to="." method="_on_use_area_body_entered"]
 [connection signal="body_exited" from="UseArea" to="." method="_on_use_area_body_exited"]

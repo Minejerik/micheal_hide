@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://nuq3xot526ie"]
+[gd_scene load_steps=17 format=4 uid="uid://b2l2o5kklik2u"]
 
 [ext_resource type="Texture2D" uid="uid://dq17gliph1vl4" path="res://assets/tile_set.png" id="1_ubwgw"]
 [ext_resource type="PackedScene" uid="uid://bhxf1mfq2ad8a" path="res://scenes/objects/box.tscn" id="2_vkq25"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nks4ph1kbhyv" path="res://scenes/enemy.tscn" id="6_2xkjh"]
 [ext_resource type="PackedScene" uid="uid://bmclc7ydfbwvd" path="res://scenes/objects/home_teleport.tscn" id="7_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://b8xdjbi2afqa4" path="res://scenes/player_character.tscn" id="7_dj21o"]
-[ext_resource type="PackedScene" uid="uid://b5nleekytp4rw" path="res://scenes/items/ITEM_OS31.tscn" id="8_8a7m2"]
+[ext_resource type="PackedScene" path="res://scenes/items/ITEM_OS98.tscn" id="8_8w0pe"]
 [ext_resource type="PackedScene" uid="uid://dhm1q30s8i3yv" path="res://scenes/HUD.tscn" id="8_plydf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_272bh"]
@@ -83,7 +83,7 @@ _data = {
 }
 point_count = 5
 
-[node name="Level1" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_272bh")
@@ -102,10 +102,6 @@ color = Color(0.14117648, 0.16078432, 0.23137255, 1)
 
 [node name="player" parent="." instance=ExtResource("7_dj21o")]
 position = Vector2(70, 236)
-
-[node name="item_win31" parent="." instance=ExtResource("8_8a7m2")]
-position = Vector2(376, 232)
-allowed_to_pick_up = true
 
 [node name="ceiling_light" parent="." instance=ExtResource("3_7lrji")]
 position = Vector2(376, 218)
@@ -148,3 +144,6 @@ position = Vector2(328, 232)
 position = Vector2(344, 216)
 
 [node name="Hud" parent="." instance=ExtResource("8_plydf")]
+
+[node name="item_os98" parent="." instance=ExtResource("8_8w0pe")]
+position = Vector2(376, 232)

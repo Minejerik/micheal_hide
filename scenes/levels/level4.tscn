@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://e6t3dpyhffej"]
+[gd_scene load_steps=18 format=4 uid="uid://lotogrflnhiq"]
 
 [ext_resource type="Texture2D" uid="uid://dq17gliph1vl4" path="res://assets/tile_set.png" id="1_k0mew"]
 [ext_resource type="PackedScene" uid="uid://b8xdjbi2afqa4" path="res://scenes/player_character.tscn" id="2_b0vvs"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dy0qk3gtegft6" path="res://scenes/objects/computer.tscn" id="7_dj4wq"]
 [ext_resource type="PackedScene" uid="uid://dhm1q30s8i3yv" path="res://scenes/HUD.tscn" id="8_hkuam"]
 [ext_resource type="PackedScene" uid="uid://cpfw04j0fgjj1" path="res://scenes/turret.tscn" id="9_b0vvs"]
-[ext_resource type="PackedScene" uid="uid://dyxi80xx43p3v" path="res://scenes/items/ITEM_OS98.tscn" id="10_oyk6k"]
+[ext_resource type="PackedScene" path="res://scenes/items/ITEM_OS2000.tscn" id="10_g1ckg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_272bh"]
 vertices = PackedVector2Array(198, 58, 326, 58, 326, 86, 234, 70, 234, 86, 198, 70, 26, 26, 570, 426, 570, 26, 630, 26, 630, 470, 26, 470, 198, 426, 198, 26, 326, 122, 326, 166, 278, 166, 266, 150, 278, 202, 326, 202, 326, 230, 294, 230, 294, 266, 326, 266, 326, 358, 294, 358, 250, 314, 250, 278, 294, 390, 234, 390, 234, 314, 234, 278, 234, 186, 266, 186, 234, 122, 234, 150, 390, 390, 362, 390, 362, 58, 390, 58, 534, 390, 426, 390, 426, 330, 534, 330, 534, 294, 426, 294, 426, 234, 534, 234, 534, 198, 426, 198, 426, 138, 534, 138, 534, 102, 426, 102, 426, 58, 534, 58)
@@ -78,7 +78,7 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_0xm2m")
 sources/1 = SubResource("TileSetAtlasSource_dj4wq")
 
-[node name="Level1" type="Node2D"]
+[node name="Level4" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_272bh")
@@ -171,5 +171,14 @@ position = Vector2(285, 384)
 rotation = 4.712389
 target_names = ["player"]
 
-[node name="item_os95" parent="." instance=ExtResource("10_oyk6k")]
+[node name="item_os2000" parent="." instance=ExtResource("10_g1ckg")]
 position = Vector2(537, 232)
+
+[node name="box10" parent="." instance=ExtResource("6_hgky1")]
+position = Vector2(520, 232)
+
+[node name="box11" parent="." instance=ExtResource("6_hgky1")]
+position = Vector2(520, 248)
+
+[node name="box12" parent="." instance=ExtResource("6_hgky1")]
+position = Vector2(536, 249)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj2ydkbum3isy"]
+[gd_scene load_steps=5 format=3 uid="uid://cj2ydkbum3isy"]
 
 [ext_resource type="Script" uid="uid://bqgge55grhe8h" path="res://scripts/main_menu.gd" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://bw1w8bw20w1yj" path="res://scripts/hud/popup_window.gd" id="2_7vrkn"]
-[ext_resource type="Script" uid="uid://dx81vogehikp" path="res://scripts/hud/settings.gd" id="3_fu7sn"]
+[ext_resource type="Script" path="res://scripts/hud/settings.gd" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://caxh0d0312rg" path="res://scripts/hud/fact.gd" id="4_jix8l"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -141,10 +142,10 @@ text = "Save Changes"
 [node name="Fact" type="Window" parent="."]
 oversampling_override = 1.0
 title = "Fun Fact"
-position = Vector2i(737, 670)
-size = Vector2i(400, 24)
+position = Vector2i(682, 670)
+size = Vector2i(450, 24)
 unresizable = true
-script = ExtResource("2_7vrkn")
+script = ExtResource("4_jix8l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Fact"]
 anchors_preset = 15
@@ -154,7 +155,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="Fact/VBoxContainer"]
+[node name="FactLabel" type="Label" parent="Fact/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Levels 3 and 4 were meant to be the first 2 levels!"

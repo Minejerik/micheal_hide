@@ -6,7 +6,7 @@
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_qpvh6")
 
-[node name="itemCollectedTemplate" type="Label" parent="."]
+[node name="notificationTemplate" type="Label" parent="."]
 visible = false
 offset_left = 740.0
 offset_top = 751.0
@@ -19,11 +19,20 @@ text = "Collected {NAME}!"
 horizontal_alignment = 2
 script = ExtResource("2_fls4u")
 
-[node name="DeleteTimer" type="Timer" parent="itemCollectedTemplate"]
+[node name="DeleteTimer" type="Timer" parent="notificationTemplate"]
 wait_time = 2.0
 one_shot = true
 
-[node name="itemCollected" type="BoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="notificationTemplate"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="notifications" type="BoxContainer" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -49,5 +58,5 @@ grow_vertical = 0
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 
-[connection signal="timeout" from="itemCollectedTemplate/DeleteTimer" to="." method="_on_delete_timer_timeout"]
-[connection signal="timeout" from="itemCollectedTemplate/DeleteTimer" to="itemCollectedTemplate" method="_on_delete_timer_timeout"]
+[connection signal="timeout" from="notificationTemplate/DeleteTimer" to="." method="_on_delete_timer_timeout"]
+[connection signal="timeout" from="notificationTemplate/DeleteTimer" to="notificationTemplate" method="_on_delete_timer_timeout"]

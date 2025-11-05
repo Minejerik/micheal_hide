@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbqvfxte700bv"]
+[gd_scene load_steps=3 format=3 uid="uid://b108gaoowk5b1"]
 
 [ext_resource type="Script" uid="uid://dowvl7bnek8dy" path="res://scripts/hud/interaction_popup.gd" id="1_efcx0"]
 
@@ -12,30 +12,6 @@ script = ExtResource("1_efcx0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_6tsac")
-
-[node name="Panel" type="Panel" parent="."]
-visible = false
-offset_left = -5.0
-offset_top = 10.0
-offset_right = 5.0
-offset_bottom = 27.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -3.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 10
-text = "E"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

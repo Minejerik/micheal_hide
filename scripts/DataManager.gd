@@ -24,13 +24,15 @@ var levels_unlocked = [
 var _level_unlocks = {
 	"OS31":"level2",
 	"OS95":"level3",
+	"OS98":"level4",
+	#"OS2000":"level4",
 }
 
 var level_info = {
 	"level1": {"name": "Level 1", "desc": "Find Michealsoft OS 3.1"},
 	"level2": {"name": "Level 2", "desc": "Find Michealsoft OS 95"},
-	"level3": {"name": "Level 3", "desc": "Find Michealsoft OS 3.1"},
-	"level4": {"name": "Level 4", "desc": "Find Michealsoft OS 3.1"},
+	"level3": {"name": "Level 3", "desc": "Find Michealsoft OS 98"},
+	"level4": {"name": "Level 4", "desc": "Find Michealsoft OS 2000"},
 }
 
 var goal_ids = [

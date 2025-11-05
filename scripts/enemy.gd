@@ -13,7 +13,7 @@ var player_body = null
 @onready var nav_agent = $NavigationAgent2D
 
 # Used for pursuing, starts it, and is followed
-@export var target_names = [""]
+@export var target_names = ["player"]
 # Use for walking, the path it follows
 @export var path: Path2D
 # Wether the enemy is alerted to a target, such as entering colider
