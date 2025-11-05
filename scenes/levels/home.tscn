@@ -145,22 +145,22 @@ allowed_to_pick_up = false
 position = Vector2(375, 183)
 
 [node name="item_os95" parent="." instance=ExtResource("11_lqded")]
-position = Vector2(295, 184)
+position = Vector2(296, 184)
 allowed_to_pick_up = false
 
 [node name="item_os98" parent="." instance=ExtResource("12_ff52r")]
-position = Vector2(278, 184)
+position = Vector2(280, 184)
 scale = Vector2(1, 0.97163856)
 allowed_to_pick_up = false
 
 [node name="item_os2000" parent="." instance=ExtResource("13_fhhke")]
-position = Vector2(261, 184)
+position = Vector2(263, 184)
 allowed_to_pick_up = false
 
 [node name="Hud" parent="." instance=ExtResource("14_fhhke")]
 
 [node name="InteractionPopup" parent="." instance=ExtResource("15_5tm82")]
-position = Vector2(376, 193)
+position = Vector2(376, 198)
 to_show = "Press E to open computer"
 
 [connection signal="body_entered" from="Area2D" to="player" method="_on_area_2d_body_entered"]
